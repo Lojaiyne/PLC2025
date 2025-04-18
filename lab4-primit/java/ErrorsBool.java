@@ -53,6 +53,7 @@ public class ErrorsBool
 
     private static Result error2Result(Error e)
     {
+        /*this matched when haskell didn't have guards
         Result result = null;
         
         switch (e) {
@@ -70,7 +71,18 @@ public class ErrorsBool
             break;
         }
         
-        return result;
+        return result;*/ 
+        //with guards:
+        if (err == Error.FP_ROUNDING) {
+        return Result.A_BIT_DIFFERENT;
+    } else if (err == Error.FP_OVERFLOW) {
+        return Result.INFINITY;
+    } else if (err == Error.FP_UNDERFLOW) {
+        return Result.ZERO;
+    } else {
+        return Result.VERY_DIFFERENT;
+    }
+        
     }
 
     public static void main(String[] args)
