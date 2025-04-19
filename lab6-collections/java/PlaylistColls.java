@@ -105,7 +105,7 @@ public class PlaylistColls {
         // TASK 6.2(b)...
         for(Item item : playlist1){
             if(item.length_secs < 20){
-                shortItemLengths1.add(item.length_secs)
+                shortItemLengths1.add(item.length_secs);
             }
         }
 
